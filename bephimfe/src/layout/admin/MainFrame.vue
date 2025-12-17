@@ -13,10 +13,11 @@
     </div>
 
     <!-- Main Content -->
-    <main class="flex-1">
-      <!-- Nội dung main ở đây -->
-       <RouterView/>
-    </main>
+    <main class="flex-1 w-screen h-screen overflow-auto">
+  <!-- Nội dung main -->
+  <RouterView/>
+</main>
+
   </div>
 </template>
 <script setup lang="ts">

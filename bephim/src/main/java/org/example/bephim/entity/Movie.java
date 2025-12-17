@@ -27,28 +27,26 @@ public class Movie {
     @UpdateTimestamp
     private Date createDate;
 
-    @OneToMany(mappedBy = "movie")
-    private List<LinkVideo> linkVideos;
+
 
     @OneToMany(mappedBy = "movie")
     private List<Episode> episodes;
 
-    @ManyToMany(mappedBy = "movies")
-    private List<Category> categories;
+   @OneToMany(mappedBy = "movie")
+   private List<MovieCategory> movieCategories;
 
     public Movie() {
     }
 
-    public Movie(Integer id, String title, String description, Integer totalEpisodes, Date updateDate, Date createDate, List<LinkVideo> linkVideos, List<Episode> episodes, List<Category> categories) {
+    public Movie(Integer id, String title, String description, Integer totalEpisodes, Date updateDate, Date createDate, List<Episode> episodes, List<MovieCategory> movieCategories) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.totalEpisodes = totalEpisodes;
         this.updateDate = updateDate;
         this.createDate = createDate;
-        this.linkVideos = linkVideos;
         this.episodes = episodes;
-        this.categories = categories;
+        this.movieCategories = movieCategories;
     }
 
     public Integer getId() {
@@ -99,13 +97,7 @@ public class Movie {
         this.createDate = createDate;
     }
 
-    public List<LinkVideo> getLinkVideos() {
-        return linkVideos;
-    }
 
-    public void setLinkVideos(List<LinkVideo> linkVideos) {
-        this.linkVideos = linkVideos;
-    }
 
     public List<Episode> getEpisodes() {
         return episodes;
@@ -115,12 +107,12 @@ public class Movie {
         this.episodes = episodes;
     }
 
-    public List<Category> getCategories() {
-        return categories;
+    public List<MovieCategory> getMovieCategories() {
+        return movieCategories;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setMovieCategories(List<MovieCategory> movieCategories) {
+        this.movieCategories = movieCategories;
     }
 }
 

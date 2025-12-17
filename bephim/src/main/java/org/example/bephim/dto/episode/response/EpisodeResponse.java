@@ -1,48 +1,28 @@
-package org.example.bephim.entity;
-
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
+package org.example.bephim.dto.episode.response;
+import org.example.bephim.dto.link_video.response.LinkVideoResponse;
 
 import java.util.Date;
 import java.util.List;
 
-@Entity
-@Table(name = "episode")
-public class Episode {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class EpisodeResponse {
     private Integer id;
-
     private Integer episodeNumber; //số thứ tự của tâpk
-
     private String title;
-
-    @UpdateTimestamp
     private Date updateDate;
-
-    @CreationTimestamp
     private Date createDate;
-
-    @OneToMany(mappedBy = "episode")
-    private List<LinkVideo> linkVideos;
-
-    @ManyToOne
-    @JoinColumn(name = "movieId",referencedColumnName = "id")
-    private Movie movie;
-
-    public Episode() {
+    private Integer movieId;
+    private List<LinkVideoResponse> linkVideos;
+    public EpisodeResponse() {
     }
 
-    public Episode(Integer id, Integer episodeNumber, String title, Date updateDate, Date createDate, List<LinkVideo> linkVideos, Movie movie) {
+    public EpisodeResponse(Integer id, Integer episodeNumber, String title, Date updateDate, Date createDate, Integer movieId, List<LinkVideoResponse> linkVideos) {
         this.id = id;
         this.episodeNumber = episodeNumber;
         this.title = title;
         this.updateDate = updateDate;
         this.createDate = createDate;
+        this.movieId = movieId;
         this.linkVideos = linkVideos;
-        this.movie = movie;
     }
 
     public Integer getId() {
@@ -85,19 +65,19 @@ public class Episode {
         this.createDate = createDate;
     }
 
-    public List<LinkVideo> getLinkVideos() {
+    public Integer getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
+    }
+
+    public List<LinkVideoResponse> getLinkVideos() {
         return linkVideos;
     }
 
-    public void setLinkVideos(List<LinkVideo> linkVideos) {
+    public void setLinkVideos(List<LinkVideoResponse> linkVideos) {
         this.linkVideos = linkVideos;
-    }
-
-    public Movie getMovie() {
-        return movie;
-    }
-
-    public void setMovie(Movie movie) {
-        this.movie = movie;
     }
 }

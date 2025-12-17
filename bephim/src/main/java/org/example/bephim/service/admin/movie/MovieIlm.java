@@ -33,7 +33,7 @@ public class MovieIlm implements MovieService{
     }
 
     @Override
-    public MovieResponse updateMovie(Long id,MovieRequest movieRequest) {
+    public MovieResponse updateMovie(Integer id,MovieRequest movieRequest) {
         Movie movie=movieRepository.findById(id).orElseThrow(()->new RuntimeException("ko có id movie này"));
         movie.setTitle(movieRequest.getTitle());
         movie.setDescription(movieRequest.getDescription());

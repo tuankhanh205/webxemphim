@@ -10,7 +10,7 @@ import java.util.List;
 public interface MovieService {
      MovieResponse createMovie(MovieRequest movieRequest);
      List<MovieResponse> getAllMovie();
-     MovieResponse updateMovie(Long id,MovieRequest movieRequest);
+     MovieResponse updateMovie(Integer id,MovieRequest movieRequest);
      List<MovieResponse> getMovieByTitle(String title);
 
 }

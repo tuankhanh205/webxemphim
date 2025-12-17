@@ -16,7 +16,7 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.setAllowCredentials(true); // Cho phép gửi cookie/token
-        config.setAllowedOrigins(List.of("http://localhost:5174")); // FE
+        config.setAllowedOrigins(List.of("http://localhost:5173")); // FE
         config.setAllowedHeaders(List.of("*")); // Cho phép mọi header
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS")); // Cho phép các phương thức
         config.setExposedHeaders(List.of("Authorization")); // Nếu muốn FE đọc được

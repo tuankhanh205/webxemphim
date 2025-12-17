@@ -25,7 +25,7 @@ public class MovieController {
         return movieService.createMovie(movieRequest);
     }
     @PutMapping("/update_movie/{id}")
-    MovieResponse updateMovie(@RequestBody MovieRequest movieRequest,@PathVariable("id") Long id){
+    MovieResponse updateMovie(@RequestBody MovieRequest movieRequest,@PathVariable("id") Integer id){
         return movieService.updateMovie(id,movieRequest);
     }
     @GetMapping("/finByTitle")

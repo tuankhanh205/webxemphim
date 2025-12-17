@@ -15,7 +15,7 @@ const model = ref<MenuItem[]>([
     items: [
       { label: 'Thống Kê', icon: 'pi pi-fw pi-home', to: '/home' },
       { label: 'Movie', icon: 'pi pi-fw pi-video', to: '/movie' },
-      { label: 'Danh mục', icon: 'pi pi-fw pi-video', to: '/Danh mục' }
+      { label: 'Danh mục', icon: 'pi pi-fw pi-video', to: '/category' }
     ]
   },
   {
